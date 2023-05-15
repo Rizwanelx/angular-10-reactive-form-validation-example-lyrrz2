@@ -16,7 +16,13 @@ export class AppComponent implements OnInit {
         title: ['', Validators.required],
         firstName: ['', Validators.required],
         lastName: ['', Validators.required],
-        mobile: ['', Validators.required, Validators.maxLength(10)],
+        mobile: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'),
+          ],
+        ],
         // validates date format yyyy-mm-dd
         dob: [
           '',
